@@ -12,28 +12,25 @@ let clean
 onMounted(() => {
   const reduce = reduceMotion()
   if (!reduce) {
-    gsap.to('.line-inner', {
-      yPercent: 0,
-      duration: 1.15,
-      stagger: 0.08,
-      ease: 'power3.out',
-      onComplete: () => gsap.set('.line-inner', { clearProps: 'transform' }),
-    })
-    gsap.from('.hero-fade', {
-      y: 18,
-      opacity: 0,
-      duration: 0.9,
-      stagger: 0.07,
-      delay: 0.35,
-      ease: 'power3.out',
-    })
-    gsap.from(frame.value, {
-      clipPath: 'inset(12% 12% 12% 12%)',
-      duration: 1.35,
-      ease: 'power3.out',
-      delay: 0.15,
-      clearProps: 'clipPath',
-    })
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+
+    tl.from('.where', { y: 14, opacity: 0, duration: 0.7 })
+      .fromTo(
+        '.line-inner',
+        { yPercent: 110 },
+        { yPercent: 0, duration: 1.15, stagger: 0.08 },
+        '-=0.45',
+      )
+      .from(
+        frame.value,
+        { clipPath: 'inset(12% 12% 12% 12%)', duration: 1.35, clearProps: 'clipPath' },
+        '-=0.9',
+      )
+      .from(
+        '.hero-fade',
+        { y: 18, opacity: 0, duration: 0.9, stagger: 0.07 },
+        '-=0.95',
+      )
   }
 
   if (!finePointer() || reduce || !frame.value) return
