@@ -6,7 +6,6 @@ import Lenis from 'lenis'
 import HeroSection from './components/HeroSection.vue'
 import MarqueeStrip from './components/MarqueeStrip.vue'
 import WorkSection from './components/WorkSection.vue'
-import CircleRow from './components/CircleRow.vue'
 import ResultsSection from './components/ResultsSection.vue'
 import FrameworkSection from './components/FrameworkSection.vue'
 import PracticeSection from './components/PracticeSection.vue'
@@ -73,7 +72,7 @@ onMounted(() => {
       yTo(event.clientY)
       cursorOn.value = true
       cursorHot.value = Boolean(
-        event.target.closest('a, button, .circle, .index-card') &&
+        event.target.closest('a, button, .index-card') &&
           !event.target.closest('.credit-wrap'),
       )
     }
@@ -132,7 +131,6 @@ onUnmounted(() => {
     <HeroSection />
     <MarqueeStrip />
     <WorkSection />
-    <CircleRow />
     <ResultsSection />
     <FrameworkSection />
     <PracticeSection />

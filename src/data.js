@@ -115,33 +115,6 @@ export const prints = [
   },
 ]
 
-export const circles = [
-  {
-    src: '/images/portrait.jpg',
-    alt: 'Portrait of Bayowa Favour',
-    label: 'Favour',
-    position: 'center 12%',
-  },
-  {
-    src: '/images/linkedin.jpg',
-    alt: 'Bayowa Favour’s LinkedIn profile',
-    label: 'Audience',
-    position: 'center 22%',
-  },
-  {
-    src: '/images/shop.jpg',
-    alt: 'The GSE Academy shop page',
-    label: 'Shop',
-    position: 'center 48%',
-  },
-  {
-    src: '/images/webinar.jpg',
-    alt: 'Bayowa Favour on stage in a fireside chat at a GSE live session',
-    label: 'Live room',
-    position: 'center 62%',
-  },
-]
-
 export const results = [
   {
     start: 100,
